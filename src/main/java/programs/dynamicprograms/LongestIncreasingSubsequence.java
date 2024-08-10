@@ -13,7 +13,7 @@ public class LongestIncreasingSubsequence {
      */
 
     public static void main(String[] args){
-        lis(new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80},9 );
+        System.out.println(lis(new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80},9 ));
     }
 
     private static int lis(int[] arr , int n){
