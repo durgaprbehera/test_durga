@@ -1,5 +1,12 @@
 package patternprograms;
 
+//Output:
+//*****
+//****
+//***
+//**
+//*
+
 public class DownRightPattern {
     public static void main(String[] args){
         int n=5;

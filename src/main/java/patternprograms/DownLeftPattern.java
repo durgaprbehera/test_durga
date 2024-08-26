@@ -1,4 +1,10 @@
 package patternprograms;
+//Output:
+// *****
+//  ****
+//   ***
+//    **
+//     *
 
 public class DownLeftPattern {
     public static void main(String[] args){
