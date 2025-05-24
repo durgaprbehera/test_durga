@@ -42,31 +42,38 @@ public class TicTacToe {
 
             // Get player move
             System.out.println("Player " + currentPlayer + ", enter your move (row [1-3] column [1-3]):");
-            int row = scanner.nextInt() - 1;
-            int col = scanner.nextInt() - 1;
+            // Try to get valid integer input for row and column, catch non-integer input
+            try {
+                int row = scanner.nextInt() - 1;
+                int col = scanner.nextInt() - 1;
 
-            // Check if the move is valid
-            if (isValidMove(row, col)) {
-                board[row][col] = currentPlayer;
+                // Check if the move is valid
+                if (isValidMove(row, col)) {
+                    board[row][col] = currentPlayer;
 
-                // Check if the current player wins
-                if (checkWin(row, col)) {
-                    printBoard();
-                    System.out.println("Player " + currentPlayer + " wins!");
-                    isGameOver = true;
-                } else {
-                    // Check if the board is full (tie)
-                    if (isBoardFull()) {
+                    // Check if the current player wins
+                    if (checkWin(row, col)) {
                         printBoard();
-                        System.out.println("It's a tie!");
+                        System.out.println("Player " + currentPlayer + " wins!");
                         isGameOver = true;
                     } else {
-                        // Switch to the next player
-                        currentPlayer = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
+                        // Check if the board is full (tie)
+                        if (isBoardFull()) {
+                            printBoard();
+                            System.out.println("It's a tie!");
+                            isGameOver = true;
+                        } else {
+                            // Switch to the next player
+                            currentPlayer = (currentPlayer == PLAYER_X) ? PLAYER_O : PLAYER_X;
+                        }
                     }
+                } else {
+                    System.out.println("Invalid move! Please try again.");
                 }
-            } else {
-                System.out.println("Invalid move! Please try again.");
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter numbers between 1 and 3 for row and column.");
+                scanner.next(); // Consume the invalid token
+                continue; // Re-prompt the user
             }
         }
 
