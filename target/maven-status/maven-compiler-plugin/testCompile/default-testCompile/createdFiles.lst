@@ -1,0 +1,7 @@
+api\tests\APITest.class
+ui\tests\runners\CucumberTestNGRunner.class
+api\tests\hooks\Hooks.class
+api\tests\stepdefs\Get_User.class
+ui\tests\hooks\Hooks.class
+api\tests\runners\CucumberTestNGRunner.class
+ui\tests\stepdefs\Login.class
